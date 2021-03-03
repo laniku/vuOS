@@ -241,7 +241,7 @@ void Protected() {
     outb(0x21, mask & 0xFD); // Enable keyboard interrupt, probably not necessary but just in case
 
     ClearColor(0x0040);
-    Write("vuOS kernel (SEATRAY) v1\n", -1, 0x000F); // 0x000F = White on Black
+    Write("vuOS kernel (SEATRAY) init 1\n", -1, 0x000F); // 0x000F = White on Black
     
     char first = 1; // Weird character that has to be ignored
     
@@ -253,7 +253,7 @@ void Protected() {
         char* ch = ReadLine();
         
         if (Cmp(ch, "about") == 1) {
-            Write("vuOS alpha v1, (c) 2021 Lucas Puntillo\n", -1, 0x000F);
+            Write("vuOS alpha, (c) 2021 Lucas Puntillo\n", -1, 0x000F);
             continue;
         }
         
