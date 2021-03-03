@@ -240,13 +240,13 @@ void Protected() {
     unsigned char mask = inb (0x21);
     outb(0x21, mask & 0xFD); // Enable keyboard interrupt, probably not necessary but just in case
 
-    ClearColor(0x0040);
+    ClearColor(0x0010);
     Write("vuOS kernel (SEATRAY) init 1\n", -1, 0x000F); // 0x000F = White on Black
     
     char first = 1; // Weird character that has to be ignored
     
     while (1) {
-        Write(">", 1, 0x000F);
+        Write("%", 1, 0x000F);
         if (! first)
             ReadKey();
         first = 0;
@@ -258,7 +258,7 @@ void Protected() {
         }
         
         if (Cmp(ch, "clear") == 1) {
-            ClearColor(0x0040);
+            ClearColor(0x0010);
             CursorX = 0;
             CursorY = 0;
             continue;
