@@ -246,7 +246,7 @@ void Protected() {
     char first = 1; // Weird character that has to be ignored
     
     while (1) {
-        Write("λ", 1, 0x000F);
+        Write(">", 1, 0x000F);
         if (! first)
             ReadKey();
         first = 0;
