@@ -24,7 +24,7 @@ jobs:
         run: mkdir -p ./iso/boot && nasm -f elf32 Loader.s -o Loader.o && gcc -c Kernel.c -m32 -nostdlib -nostdinc -ffixed-ecx -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -W && ld -T Link.ld -melf_i386 Loader.o Kernel.o  -o ./iso/boot/kernel
           
       - name: Make disk image
-        run: cp grub.cfg ./iso/boot && ls ./iso/boot/ && grub-mkrescue iso -o vuos-i686.iso
+        run: cp grub.cfg ./iso/boot && ls ./iso/boot && grub-mkrescue iso -o vuos-i686.iso
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
