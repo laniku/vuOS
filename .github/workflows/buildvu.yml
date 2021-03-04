@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
          name: vuos-i686.iso
-         path: ./vuos-i686.iso
+         path: ./iso/vuos-i686.iso
