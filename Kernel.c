@@ -268,6 +268,23 @@ void Protected() {
             Clear();
             break;
         }
+	
+	if (Cmp(ch, "about") == 1) {
+            Write(" /$$    /$$ \n");
+            Write("| $$   | $$ \n");
+            Write("| $$   | $$ \n");
+            Write("|  $$ / $$/ \n");
+            Write(" \  $$ $$/  \n");
+            Write("  \  $$$/   \n");
+            Write("   \  $/    \n");
+            Write("    \_/     \n");
+            Write("------------ \n")
+            Write("user@vuos \n");
+            Write("------------ \n");
+            Write("OS: vuOS Rolling \n");
+            Write("KERNEL: SEATRAY \n");
+            continue;
+        }
     }
 
     // When ran under GRUB(Which has modules I use to load a program) this would jump to it
