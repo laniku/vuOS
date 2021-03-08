@@ -240,13 +240,13 @@ void Protected() {
     unsigned char mask = inb (0x21);
     outb(0x21, mask & 0xFD); // Enable keyboard interrupt, probably not necessary but just in case
 
-    ClearColor(0x0010);
+    ClearColor(0x0040);
     Write("vuOS kernel (SEATRAY) init 1\n", -1, 0x000F); // 0x000F = White on Black
     
     char first = 1; // Weird character that has to be ignored
     
     while (1) {
-        Write("vuos-%", 6, 0x000F);
+        Write(">", 1, 0x000F);
         if (! first)
             ReadKey();
         first = 0;
@@ -258,7 +258,7 @@ void Protected() {
         }
         
         if (Cmp(ch, "clear") == 1) {
-            ClearColor(0x0010);
+            ClearColor(0x0040);
             CursorX = 0;
             CursorY = 0;
             continue;
@@ -267,23 +267,6 @@ void Protected() {
         if (Cmp(ch, "exit") == 1) {
             Clear();
             break;
-        }
-	
-	if (Cmp(ch, "sysfetch") == 1) {
-            Write(" /$$    /$$ \n");
-            Write("| $$   | $$ \n");
-            Write("| $$   | $$ \n");
-            Write("|  $$ / $$/ \n");
-            Write(" \  $$ $$/  \n");
-            Write("  \  $$$/   \n");
-            Write("   \  $/    \n");
-            Write("    \_/     \n");
-            Write("------------ \n")
-            Write("user@vuos \n");
-            Write("------------ \n");
-            Write("OS: vuOS Rolling \n");
-            Write("KERNEL: SEATRAY \n");
-            continue;
         }
     }
 
