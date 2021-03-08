@@ -18,6 +18,9 @@
     ALIGN_MODULES   equ 0x00000001      ; tell GRUB to align modules
     FLAGS        equ 0x0            ; multiboot flags
     CHECKSUM     equ -(MAGIC_NUMBER + MODULE_ALIGN)  ; calculate the checksum
+    WIDTH 1024
+    HEIGHT 768
+    DEPTH 32
     ;VM_BASE     equ 0xC0000000
     ;PDE_INDEX   equ (VM_BASE >> 22)
     ;PSE_BIT     equ 0x00000010
