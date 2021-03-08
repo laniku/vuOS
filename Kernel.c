@@ -269,7 +269,7 @@ void Protected() {
             break;
         }
 	
-	if (Cmp(ch, "about") == 1) {
+	if (Cmp(ch, "sysfetch") == 1) {
             Write(" /$$    /$$ \n");
             Write("| $$   | $$ \n");
             Write("| $$   | $$ \n");
