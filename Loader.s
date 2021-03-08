@@ -14,13 +14,13 @@
 	  STACK_SIZE equ 4096
     MODULE_ALIGN equ 0x1
 
-    MAGIC_NUMBER equ 0x1BADB002     ; define the magic number constant
-    ALIGN_MODULES   equ 0x00000001      ; tell GRUB to align modules
-    FLAGS        equ 0x0            ; multiboot flags
-    CHECKSUM     equ -(MAGIC_NUMBER + MODULE_ALIGN)  ; calculate the checksum
-    WIDTH 1024
-    HEIGHT 768
-    DEPTH 32
+    .set MAGIC, 0x1BADB002     ; define the magic number constant
+    .set FLAGS, 7            ; multiboot flags
+    .set CHECKSUM, -(MAGIC + FLAGS)  ; calculate the checksum
+    .set MODE_TYPE, 0
+    .set WIDTH, 1024
+    .set HEIGHT, 768
+    .set DEPTH, 32
     ;VM_BASE     equ 0xC0000000
     ;PDE_INDEX   equ (VM_BASE >> 22)
     ;PSE_BIT     equ 0x00000010
