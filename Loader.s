@@ -266,4 +266,3 @@ section .bss
 
     global ramdisk
     ramdisk:
-
