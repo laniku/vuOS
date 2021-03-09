@@ -5,4 +5,5 @@
 vuOS is a simple 32Bit OS for the i686 series of processors. 
 
 **Screenshot:**
+
 ![screenshot](https://github.com/puntillol59/vuOS/raw/i686/resources/screenshots/compressed-src-vuOS-readme.png)
