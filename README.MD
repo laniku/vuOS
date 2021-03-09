@@ -1,4 +1,4 @@
-## vuOS
+##  vuOS
 
 ![logo](https://raw.githubusercontent.com/puntillol59/vuOS/i686/resources/logos/logo-readme.png)
 
