@@ -6,4 +6,4 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1.0.0
-      - uses: max/awesome-lint@v2.0.0
+      - uses: roaldnefs/salt-lint-action@v0.0.2
