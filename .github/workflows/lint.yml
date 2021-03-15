@@ -1,0 +1,9 @@
+name: Lint Code
+on: push
+jobs:
+  lint:
+    name: Lint
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - uses: max/awesome-lint@v2.0.0
