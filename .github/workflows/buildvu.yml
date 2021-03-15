@@ -1,4 +1,4 @@
-name: Build-vuOS
+name: Build vuOS
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get dependencies
-        run: sudo apt update && sudo apt purge build-essential mtools nasm xorriso grub-pc-bin -y && sudo apt install build-essential mtools nasm xorriso grub-pc-bin -y
+        run: sudo apt update && sudo apt install build-essential mtools nasm xorriso grub-pc-bin fuse hfsprogs hfsplus -y
           
       - name: Build vuOS
-        run: mkdir -p ./iso/boot/grub/ && nasm -f elf32 Loader.s -o Loader.o && gcc -c Kernel.c -m32 -nostdlib -nostdinc -ffixed-ecx -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -W && ld -T Link.ld -melf_i386 Loader.o Kernel.o  -o ./iso/boot/vuos-seatray.elf
+        run: mkdir -p ./iso/boot/grub/ && mkdir -p ./iso/ramfs/ && nasm -f elf32 Loader.s -o Loader.o && gcc -c Kernel.c -m32 -nostdlib -nostdinc -ffixed-ecx -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -W && ld -T Link.ld -melf_i386 Loader.o Kernel.o  -o ./iso/boot/vuos-seatray.elf
           
       - name: Make disk image
-        run: cp grub.cfg ./iso/boot/grub && cp grubwp.jpg ./iso/boot && sudo rm -rf /usr/lib/grub/x86_64-efi && ls ./iso/boot && grub-mkrescue --output vuos-i686.iso --compress xz --themes starfield iso/
+        run: cp grub.cfg ./iso/boot/grub && cp grubwp.jpg ./iso/boot && dd if=/dev/zero of=ramfs.dd bs=1048576 count=1 && parted ramfs.dd mklabel msdos && mkfs.hfs ramfs.dd -v rootfs -w && cp ramfs.dd ./iso/ramfs && sudo rm -rf /usr/lib/grub/x86_64-efi && ls ./iso/boot && grub-mkrescue --output vuos-i686.iso --compress gz iso/
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
