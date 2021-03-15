@@ -24,7 +24,7 @@ jobs:
     # Name the Job
     name: Lint
     # Set the agent to run on
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     ##################
     # Load all steps #
