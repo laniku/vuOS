@@ -2,8 +2,10 @@ name: Lint Code
 on: push
 jobs:
   lint:
-    name: Lint
+    name: Lint Code Base
+    uses: github/super-linter@v3
     runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v1.0.0
-      - uses: roaldnefs/salt-lint-action@v0.0.2
+    env:
+      VALIDATE_ALL_CODEBASE: false
+      DEFAULT_BRANCH: master
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
