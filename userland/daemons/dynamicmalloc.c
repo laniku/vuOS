@@ -25,7 +25,7 @@ int main()
     else { 
   
         // Memory has been successfully allocated 
-        printf("Memory successfully allocated using malloc.\n"); 
+        printf("Memory successfully allocated.\n"); 
   
         // Get the elements of the array 
         for (i = 0; i < n; ++i) { 
