@@ -10,7 +10,7 @@ int main()
     int n, i; 
   
     // Get the number of elements for the array 
-    n = 5; 
+    n = 100; 
     printf("Enter number of elements: %d\n", n); 
   
     // Dynamically allocate memory using malloc() 
