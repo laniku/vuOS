@@ -263,6 +263,11 @@ void Protected() {
             CursorY = 0;
             continue;
         }
+	    
+	if (Cmp(ch, "modload") == 1) {
+	    Jump((void*) modules[1].mod_start);
+            continue;
+        }
         
         if (Cmp(ch, "exit") == 1) {
             Clear();
@@ -271,7 +276,7 @@ void Protected() {
     }
 
     // When ran under GRUB(Which has modules I use to load a program) this would jump to it
-    // Jump((void*) modules[1].mod_start);
+    Jump((void*) modules[1].mod_start);
 }
 
 #pragma region COPY PASTE
@@ -354,8 +359,8 @@ char* sysargs = (char*) 0x060000;
 
 void syscall_handler(unsigned int eax, unsigned int ecx) {
     if (eax == 1) {
-        //Clear();
-        //Write("Program exited...", -1, 0x0004);
+        Clear();
+        Write("Program exited...", -1, 0x0004);
 
         while (1);
     }
