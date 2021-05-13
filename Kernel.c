@@ -238,7 +238,6 @@ void Protected() {
     Clear();
 
     unsigned char mask = inb (0x21);
-    outb(0x21, mask & 0xFD); // Enable keyboard interrupt, probably not necessary but just in case
 
     ClearColor(0x0010);
     Write("vuOS kernel (SEATRAY) init 1\n", -1, 0x000F); // 0x000F = White on Black
