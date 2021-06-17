@@ -267,6 +267,11 @@ void Protected() {
 	    Jump((void*) modules[1].mod_start);
             continue;
         }
+
+        if (Cmp(ch, "you") == 1) {
+            Write("you mean 7980\n", -1, 0x000F);
+            continue;
+        }
         
         if (Cmp(ch, "exit") == 1) {
             Clear();
