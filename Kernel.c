@@ -269,7 +269,12 @@ void Protected() {
         }
 
         if (Cmp(ch, "you") == 1) {
-            Write("you mean 7980\n", -1, 0x000F);
+            Write("you mean 7880\n", -1, 0x000F);
+            continue;
+        }
+	    
+        if (Cmp(ch, "osinfo") == 1) {
+            Write("$$\    $$\             vuOS rolling\n $$ |   $$ |             --------------------------\n $$ |   $$ |             Version: Nightly\n \$$\  $$  |            Rev: 20212808\n  \$$\$$  /            Display: 640x480 @ 16bpp\n   \$$$  /              Arch: x86\n", -1, 0x000F);
             continue;
         }
         
