@@ -274,7 +274,7 @@ void Protected() {
         }
 	    
         if (Cmp(ch, "osinfo") == 1) {
-            Write("$$\    $$\             vuOS rolling\n $$ |   $$ |             --------------------------\n $$ |   $$ |             Version: Nightly\n \$$\  $$  |            Rev: 20212808\n  \$$\$$  /            Display: 640x480 @ 16bpp\n   \$$$  /              Arch: x86\n", -1, 0x000F);
+            Write("$$*    $$*             vuOS rolling\n $$ |   $$ |             --------------------------\n $$ |   $$ |             Version: Nightly\n *$$*  $$  |            Rev: 20212808\n  *$$*$$  /            Display: 640x480 @ 16bpp\n   \$$$  *              Arch: x86\n", -1, 0x000F);
             continue;
         }
         
