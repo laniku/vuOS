@@ -282,10 +282,6 @@ void Protected() {
             Write("$$*    $$*             vuOS rolling\n $$ |   $$ |             --------------------------\n $$ |   $$ |             Version: Nightly\n *$$*  $$  |            Rev: 20212808\n  *$$*$$  /            Display: 640x480 @ 16bpp\n   \$$$  *              Arch: x86\n", -1, 0x000F);
             continue;
         }
-        if (Cmp(ch, "vibin") == 1) {
-            Write("yua was here\n", -1, 0x000F);
-            continue;
-        }
         
         if (Cmp(ch, "exit") == 1) {
             Clear();
